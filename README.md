@@ -89,3 +89,47 @@ let guess: u32 = guess.trim().parse() { // checking if user input is a number
 ```
 
 -> In above snippet, _num_ is the resultant value returned by _parse()_ function. The (\_) is a catchall value which says match all possible error values.
+
+### Constants and Shadowing in Rust
+
+-> Constants in Rust, cant use mut keyword. Syntax,
+
+```
+const SOME_CONSTANT_NAME: u32 =200
+```
+
+-> The type of the constant must always be annotated.
+
+-> Immutable variables can be shadowed and assigned different values using let keyword.
+
+```
+fn main() {
+    let x = 5;
+    let x = x + 1; // 6
+
+    {
+        let x = x * 2; // 12
+        println!("The value of x in the inner scope is: {x}");
+    }
+
+    println!("The value of x is: {x}"); //6
+}
+```
+
+### Data Types in Rust
+
+-> Scalar and Compound Data Types
+-> Scalar Type - Represent single value
+-> Examples
+
+```
+let integer_var: u32 = 100; //Integer
+let floar_var: f32 = 5.0; //Float
+let boolean_var: bool = true; //Boolean
+let character_var: char = 'a'; //Character
+```
+
+-> For Integers, u - unsigned : Values are always positive and i - signed : Can have negative values
+-> Each signed variant can store numbers from -(2^(n - 1)) to 2^(n - 1) - 1.
+
+-> Compound Type - Represent Multiple values.
